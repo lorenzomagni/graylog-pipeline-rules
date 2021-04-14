@@ -1,0 +1,13 @@
+rule "logon_type_converter"
+
+when
+
+  has_field("event_data_logon_italiano")
+
+then
+
+let logon_type_converted = to_string($message.event_data_logon_italiano);
+
+set_field("logon_type_converted", logon_type_converted);
+
+end
