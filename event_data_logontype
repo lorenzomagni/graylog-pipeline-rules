@@ -1,0 +1,13 @@
+rule "event_data_logontype"
+
+when
+
+  has_field("winlogbeat_winlog_event_data_LogonType")
+
+then
+
+let event_data_logon_italiano = lookup("event_data_logontype_lookup", ($message.winlogbeat_winlog_event_data_LogonType));
+
+set_field("event_data_logon_italiano", event_data_logon_italiano);
+
+end
