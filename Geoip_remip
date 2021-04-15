@@ -1,0 +1,17 @@
+rule "GeoIP lookup: remip"
+
+when
+
+  has_field("remip")
+
+then
+
+let geo = lookup("geo_remip", to_string($message.remip));
+
+set_field("remip_geo_location", geo["coordinates"]);
+
+set_field("remip_geo_country", geo["country"].iso_code);
+
+set_field("remip_geo_city", geo["city"].names.en);
+
+end
