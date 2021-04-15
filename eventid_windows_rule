@@ -1,0 +1,13 @@
+rule "eventid_windows_rule"
+
+when
+
+  has_field("winlogbeat_winlog_event_id")
+
+then
+
+let winlogbeat_winlog_italiano = lookup("eventid_widget_windows_lookup", to_string($message.winlogbeat_winlog_event_id));
+
+set_field("winlogbeat_winlog_ita", winlogbeat_winlog_italiano);
+
+end
