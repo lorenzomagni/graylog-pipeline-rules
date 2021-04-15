@@ -1,0 +1,13 @@
+rule "eventid_windows_converter"
+
+when
+
+  has_field("winlogbeat_winlog_ita")
+
+then
+
+let winlogbeat_winlog_converted = to_string($message.winlogbeat_winlog_ita);
+
+set_field("winlogbeat_winlog_converted", winlogbeat_winlog_converted);
+
+end
