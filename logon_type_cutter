@@ -1,0 +1,13 @@
+rule "logon_type_cutter"
+
+when
+
+  has_field("logon_type_converted")
+
+then
+
+let logon_type_cut = substring((to_string($message.logon_type_converted)), 7, -1);
+
+set_field("logon_type_cut", logon_type_cut);
+
+end
