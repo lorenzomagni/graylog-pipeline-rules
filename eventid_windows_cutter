@@ -1,0 +1,13 @@
+rule "eventid_windows_cutter"
+
+when
+
+  has_field("winlogbeat_winlog_converted")
+
+then
+
+let winlogbeat_winlog_cut = substring(winlogbeat_winlog_converted, 6, [-1]);
+
+set_field("winlogbeat_winlog_cut", winlogbeat_winlog_cut);
+
+end
