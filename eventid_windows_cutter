@@ -6,7 +6,7 @@ when
 
 then
 
-let winlogbeat_winlog_cut = substring("winlogbeat_winlog_converted", 6, -1);
+let winlogbeat_winlog_cut = substring((to_string($message.winlogbeat_winlog_converted)), 7, -1);
 
 set_field("winlogbeat_winlog_cut", winlogbeat_winlog_cut);
 
