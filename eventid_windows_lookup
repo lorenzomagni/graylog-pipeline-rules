@@ -1,4 +1,4 @@
-rule "eventid_windows_rule"
+rule "eventid_windows_lookup"
 
 when
 
