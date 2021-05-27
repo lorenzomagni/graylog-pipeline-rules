@@ -1,4 +1,4 @@
-rule "GeoIP lookup: remip"
+rule "remip_geo_localization"
 
 when
 
