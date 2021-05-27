@@ -1,4 +1,4 @@
-rule "event_data_logontype"
+rule "logontype_lookup"
 
 when
 
